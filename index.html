@@ -36,10 +36,22 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Explore</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Book</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item">
+            <a href="#explore" class="nav-link">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link"
+              data-toggle="modal"
+              data-target="#bookingModal"
+              >Book</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
@@ -53,12 +65,19 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
           unde velit nulla maiores, quae nostrum.
         </p>
-        <button id="book" class="btn btn-primary px-5">BOOK NOW</button>
+        <button
+          id="book"
+          class="btn btn-primary px-5"
+          data-toggle="modal"
+          data-target="#bookingModal"
+        >
+          BOOK NOW
+        </button>
       </div>
     </section>
 
     <section>
-      <div class="container text-center">
+      <div id="about" class="container text-center">
         <h2 class="my-5">YOU SHOW UP, WE PITCH THE TENT.</h2>
         <div class="row">
           <div class="col-md-4 p-3">
@@ -102,7 +121,7 @@
     </section>
 
     <section>
-      <div class="container text-center">
+      <div id="explore" class="container text-center">
         <h2 class="my-5">
           A CAMPING EXPERIENCE THAT'S CONVENIENT AND HASSLE FREE
         </h2>
@@ -298,7 +317,7 @@
       </div>
     </section>
 
-    <section class="bg-secondary">
+    <section id="contact" class="bg-secondary">
       <div class="container text-center text-white py-5">
         <p class="lead">JOIN OUR NEWSLETTER FOR UPDATES AND OFFERS.</p>
         <div class="row justify-content-center">
@@ -335,10 +354,93 @@
           <a href="" class="nav-link text-white">CONTACT</a>
         </li>
         <li class="nav-item">
-          <a href="" class="nav-link text-white">BOOK NOW</a>
+          <a
+            href=""
+            class="nav-link text-white"
+            data-toggle="modal"
+            data-target="#bookingModal"
+            >BOOK NOW</a
+          >
         </li>
       </ul>
     </section>
+
+    <!-- Modal Markup -->
+    <div
+      class="modal fade"
+      id="bookingModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="bookingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New Booking</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Fill out the form and we'll get to you as fast as possible.</p>
+            <form action="">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="adults">Number of Adults</label>
+                <select name="" id="adults" class="form-control">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="children">Number of Childer</label>
+                <select name="" id="children" class="form-control">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="request">Any Additional Requests</label>
+                <textarea
+                  name=""
+                  id="request"
+                  rows="3"
+                  class="form-control"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
